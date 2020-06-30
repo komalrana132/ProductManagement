@@ -111,3 +111,7 @@ export const GET_LOGIN_FAILURE='login_failure';
 export const GET_REGISTER_REQUEST='register_request';
 export const GET_REGISTER_SUCCESS='register_success';
 export const GET_REGISTER_FAILURE='register_failure';
+
+export const LOGOUT_REQUEST = 'logout_request';
+export const LOGOUT_SUCCESS = 'logout_success';
+export const LOGOUT_FAILED = 'logout_failed';

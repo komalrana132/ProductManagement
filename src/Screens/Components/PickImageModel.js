@@ -16,7 +16,6 @@ import IconMD from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {Colors, ImagesPath} from '../../CommonConfig';
 import Button from './Button';
-import scannerStyle from '../ScannerModule/scannerStyle';
 // import Modal from 'react-native-modal';
 let translateX = new Animated.Value(0);
 let translateY = new Animated.Value(0);

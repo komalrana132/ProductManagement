@@ -3,7 +3,7 @@ const STAGING = "http://dummy.restapiexample.com/api/v1/employees";
 const ENVIRONMENT = STAGING;
 // const SERVER_URL = "http://192.168.1.155/ChatDemoAPI/ChatApp.php?Service="
 // const SERVER_URL = "http://clientapp.narola.online/pg/RidyApp/RidyAppService.php?Service="
-const SERVER_URL = "http://localhost/ProductManagement/ProductManagementServices.php?Service="
+const SERVER_URL = "http://127.0.0.1/ProductManagement/ProductManagementServices.php?Service="
 
 module.exports = {
 

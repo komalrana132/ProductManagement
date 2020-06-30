@@ -16,12 +16,15 @@ import {
     GET_LOGIN_REQUEST,
     GET_REGISTER_SUCCESS,
     GET_REGISTER_FAILURE,
-    GET_REGISTER_REQUEST
+    GET_REGISTER_REQUEST,
+
+
+    LOGOUT_SUCCESS,
+    LOGOUT_FAILED
 
 
 
 } from '../Types';
-import { take } from 'lodash';
 
 
 
@@ -37,6 +40,17 @@ export const loginSaga = function* loginSaga({params}){
     }
 }
 
+export const logOut = function* logOut({params}){
+    try {
+        console.log("*****************PARAMS************* \n ",params);
+        const response = yield call(Api.loginOut, params)
+        yield put({type : LOGOUT_SUCCESS, payload : response})
+    } catch (e) {
+        console.log("************ERROR*************** \n ", e);
+        yield put({type : LOGOUT_FAILED, payload : e})
+        
+    }
+}
 
 // ===========>>>>>>>>>> testencryption OTP SAGA <<<<<<<<<<<<===========
 export const testEncryptionSaga = function* testEncryptionSaga({ params }) {

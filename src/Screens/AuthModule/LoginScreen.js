@@ -53,44 +53,23 @@ class LoginScreen extends React.Component {
 
    async componentDidMount() {
       this.setHeader();
-      this.props.auth.testEncryptionResponse.encryted_value ? global.access_key = this.props.auth.testEncryptionResponse.encryted_value : global.access_key = "nousername";
-      const token = await AsyncStorage.getItem('appToken')
-      this.props.auth.registerResponse.tempToken ? global.secret_key = this.props.auth.registerResponse.userToken : global.secret_key = token;
-      this.refreshTokenRequest();
+      console.log(this.state,  this.props, "login");
+      
+      this.props.auth.testEncryptionSuccess && this.props.auth.testEncryptionResponse.encryted_value
+            ? (global.access_key = this.props.auth.testEncryptionResponse.encryted_value)
+            : (global.access_key = 'nousername');
+         
+      
+            const token = await AsyncStorage.getItem('appToken');
+         
+      this.props.auth.registerSuccess &&  this.props.auth.registerResponse.userToken
+            ? (global.secret_key = this.props.auth.registerResponse.userToken)
+            : (global.secret_key = token);
+      console.log(global.secret_key, token);
+      
    }
    async componentDidUpdate(prevProps) {
       const {loginLoading, refreshTokenLoading} = this.state;
-
-      // refresh token responce
-      if (
-         refreshTokenLoading &&
-         this.props.common.refreshTokenSuccess === true &&
-         this.props.common.refreshTokenResponce.status === '1'
-      ) {
-         if (this.props.common != prevProps.common) {
-            global.secret_key = this.props.common.refreshTokenResponce.tempToken;
-            AsyncStorage.setItem(
-               'appToken',
-               this.props.common.refreshTokenResponce.tempToken,
-            ).then(this.setState({refreshTokenLoading: false}));
-         }
-      } else if (
-         refreshTokenLoading &&
-         this.props.common.refreshTokenSuccess &&
-         this.props.common.refreshTokenResponce.status !== '1'
-      ) {
-         if (this.props.common != prevProps.common) {
-            this.setState({refreshTokenLoading: false});
-         }
-      } else if (
-         refreshTokenLoading &&
-         this.props.common.refreshTokenSuccess === false
-      ) {
-         if (this.props.common != prevProps.common) {
-            this.setState({refreshTokenLoading: false});
-            alert('Something went wrong');
-         }
-      }
 
       // login api
       if (
@@ -127,18 +106,6 @@ class LoginScreen extends React.Component {
    hasErrors = (key) => {
       return this.state.errors.includes(key) ? true : false;
    };
-
-   async refreshTokenRequest() {
-      const appToken = await AsyncStorage.getItem('appToken');
-
-      if (!appToken) {
-         this.setState({refreshTokenLoading: true});
-         let requestParam = {
-            access_key: global.access_key,
-         };
-         this.props.refreshToken(requestParam);
-      }
-   }
 
    loginRequest() {
       this.setState({loginLoading: true});
@@ -181,7 +148,7 @@ class LoginScreen extends React.Component {
    setHeader() {
       this.props.navigation.setOptions({
          headerShown: false,
-         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+         // cardStyleInterpolator: null,
       });
    }
 
@@ -191,7 +158,7 @@ class LoginScreen extends React.Component {
 
    // =======>>>>>>>> RENDER INITIALIZE <<<<<<<<=======
    render() {
-      let loading = this.state.refreshTokenLoading || this.state.loginLoading;
+      let loading = this.state.loginLoading;
       return (
          <SafeAreaView style={authStyle.loginScreeContainer}>
             {loading ? (
@@ -425,6 +392,6 @@ const mapStateToProps = (state) => {
 };
 
 // =======>>>>>>>> REDUX CONNECTION <<<<<<<<=======
-export default connect(mapStateToProps, {loginRequest, refreshToken})(
+export default connect(mapStateToProps, {loginRequest})(
    LoginScreen,
 );

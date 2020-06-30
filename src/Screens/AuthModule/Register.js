@@ -788,7 +788,7 @@ console.log(this.state);
                   style={[
                      authStyle.loginBodyInnerViewContainer,
                      {
-                        borderBottomColor: this.state.passwordFocus
+                        borderBottomColor: this.state.firstnameFocus
                            ? Colors.black
                            : null,
                      },

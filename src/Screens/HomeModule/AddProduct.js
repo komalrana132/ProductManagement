@@ -14,7 +14,6 @@ import {
    KeyboardAvoidingView,
    FlatList
 } from 'react-native';
-import scannerStyle from '../ScannerModule/scannerStyle';
 import {ApplicationStyles} from '../../CommonConfig/ApplicationStyle';
 import {ImagesPath, Colors, LoadWheel, Sizes} from '../../CommonConfig';
 import homeStyle from '../HomeModule/homeStyle';
@@ -29,7 +28,6 @@ import {
    getSellerProductListRequest,
 } from '../../Redux/Actions';
 import {cartDATA} from '../../DATA';
-import dealsStyle from '../DealsModule/dealsStyle';
 import CardView from 'react-native-cardview';
 import Button from '../Components/Button';
 import TextComponent from '../Components/Text';
@@ -490,7 +488,7 @@ class AddProduct extends React.Component {
                   <Button
                      gradient
                      style={authStyle.loginButtonContainer}
-                     onPress={() => this.handleLogin()}>
+                     onPress={() => {}}>
                      <TextComponent bold white center>
                         + Add Product
                      </TextComponent>
@@ -504,7 +502,7 @@ class AddProduct extends React.Component {
    noItemView() {
       return (
          <>
-            <View style={[scannerStyle.AddItemContainer]}>
+            <View style={[homeStyle.productItemContainerStyle]}>
                <Image
                   source={ImagesPath.qrCodeFailIcon}
                   style={{height: s(200), width: s(200)}}
@@ -539,7 +537,7 @@ class AddProduct extends React.Component {
             <TouchableOpacity
                onPress={() => this.props.navigation.goBack()}
                style={[
-                  scannerStyle.modalinnerView2,
+                  homeStyle.modalinnerView2,
                   {
                      backgroundColor: Colors.LIGHT_APPCOLOR,
                      marginBottom: s(25),
@@ -579,7 +577,7 @@ class AddProduct extends React.Component {
       ) : (
          <SafeAreaView
             style={[
-               scannerStyle.scannerContainer,{backgroundColor: Colors.white}
+               {flex: 1,backgroundColor: Colors.white}
             ]}>
             {this.addProduct()}
          </SafeAreaView>

@@ -25,7 +25,7 @@ export default (state = INITIAL_STATE, action) => {
       return {...state, testEncryptionSuccess: false, error: action.payload};
 
     case GET_LOGIN_SUCCESS:
-      return {...state, loginSuccess: true, loginResponse: action.payload};
+      return {...state, loginSuccess: true, loginResponse: action.payload, userDetail : action.payload};
 
     case GET_LOGIN_FAILURE:
       return {...state, loginSuccess: false, error: action.payload};

@@ -14,7 +14,6 @@ import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 import { CommonActions } from '@react-navigation/native';
 import { s, vs } from 'react-native-size-matters';
 import { resetAuthRequest } from '../../Redux/Actions'
-import dealsStyle from '../DealsModule/dealsStyle';
 import settingScreenStyle from '../SettingsModule/settingScreenStyle';
 
 class SettingDrawer extends React.Component {
@@ -77,7 +76,7 @@ class SettingDrawer extends React.Component {
             <View style={{ flex: 1 }}>
                 <TouchableOpacity onPress={() => rest.navigation.navigate('Home')}
                     style={{ width: '100%', backgroundColor: Colors.APPCOLOR, height: vs(200), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={this.state.profile ? this.state.profile : ImagesPath.profilePictureIcon} resizeMode="cover" style={[dealsStyle.imageStyle, { marginTop: s(25), height: s(80), width: s(80) }]} />
+                    <Image source={this.state.profile ? this.state.profile : ImagesPath.profilePictureIcon} resizeMode="cover" style={[settingScreenStyle.imageStyle, { marginTop: s(25), height: s(80), width: s(80) }]} />
                     <Text style={{ fontSize: s(18), padding: s(10), color: Colors.WHITE, fontWeight: 'bold', width: s(200), textAlign: 'center', alignContent: 'center' }} numberOfLines={1}>{this.capital_letter(this.state.fname)} {this.capital_letter(this.state.lname)}</Text>
                 </TouchableOpacity>
                 <DrawerContentScrollView {...rest} showsVerticalScrollIndicator={false}>

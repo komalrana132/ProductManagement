@@ -154,11 +154,30 @@ const homeStyle = StyleSheet.create({
             width: s(12),
             tintColor : Colors.white
     },
+    cartImageContainerStyle:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: s(5), 
+        alignSelf: 'center', 
+        height: s(100), 
+        width: s(90), 
+    },
     productItemContainerStyle: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: Colors.WHITE
-    }
+    },
+    modalinnerView2:{
+        width: '80%',
+        height: s(50),
+        flexDirection: 'row',
+        backgroundColor: Colors.APPCOLOR,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 15,
+        marginTop: s(10)
+        
+    },
 })
 export default homeStyle;

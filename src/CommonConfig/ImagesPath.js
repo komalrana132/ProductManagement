@@ -1,8 +1,6 @@
 const ImagesPath = {
     //SCANNER icon
     CloseIcon: require('../Assets/Icons/header/close.png'),
-    SwitchOnIcon: require('../Assets/Icons/header/switchon.png'),
-    SwitchOffIcon: require('../Assets/Icons/header/switchoff.png'),
 
     //DRAWER icon
     HomeIcon : require('../Assets/Icons/drawer/home.png'),
@@ -16,6 +14,11 @@ const ImagesPath = {
     dealsIcon : require('../Assets/Icons/drawer/deal.png'),
     backIcon : require('../Assets/Icons/drawer/back.png'),
     rightIcon : require('../Assets/Icons/drawer/right.png'),
+    camera : require('../Assets/Icons/home/camera.png'),
+    minusIcon : require('../Assets/Icons/home/minus.png'),
+    plusIcon : require('../Assets/Icons/home/plus.png'),
+    multiproductsIcon : require('../Assets/Icons/home/multipleproducts.png'),
+
     
 
 
@@ -26,36 +29,31 @@ const ImagesPath = {
     whatsappIcon : require('../Assets/Icons/invite/whatsapp.png'),
     scan_inviteIcon : require('../Assets/Icons/invite/scan_invite.png'),
     instagramIcon : require('../Assets/Icons/invite/instagram.png'),
+    mentosIcon : require('../Assets/Icons/home/mentos.png'),
+    noProductIcon : require('../Assets/Icons/home/NoProduct.png'),
+    payIcon : require('../Assets/Icons/home/pay.png'),
+    barboneIcon : require('../Assets/Icons/home/barbone.png'),
+    addCardIcon : require('../Assets/Icons/home/addCard.png'),
+    profilePictureIcon : require('../Assets/Icons/home/profilePicture.png'),
+    doubleBubbleIcon : require('../Assets/Icons/home/dubbleBubble.png'),
+    snickersIcon : require('../Assets/Icons/home/snickers.png'),
     invite : require('../Assets/Icons/invite/invite.png'),
-    camera : require('../Assets/Icons/home/camera.png'),
-    minusIcon : require('../Assets/Icons/home/minus.png'),
-    plusIcon : require('../Assets/Icons/home/plus.png'),
+    
     deleteIcon : require('../Assets/Icons/home/delete.png'),
     editIcon : require('../Assets/Icons/home/edit.png'),
     visaIcon : require('../Assets/Icons/home/visa.png'),
     calenderIcon : require('../Assets/Icons/home/calendar.png'),
     pdfIcon : require('../Assets/Icons/home/pdf.png'),
-    barboneIcon : require('../Assets/Icons/home/barbone.png'),
     dashboardIcon : require('../Assets/Icons/home/dashboard.png'),
-    bannerIcon : require('../Assets/Icons/home/banner.png'),
-    doubleBubbleIcon : require('../Assets/Icons/home/dubbleBubble.png'),
-    mentosIcon : require('../Assets/Icons/home/mentos.png'),
-    qrCodeFailIcon : require('../Assets/Icons/home/qrCodeFail.png'),
-    snickersIcon : require('../Assets/Icons/home/snickers.png'),
-    profilePictureIcon : require('../Assets/Icons/home/profilePicture.png'),
+
     galleryIcon : require('../Assets/Icons/home/gallery.png'),
     revertIcon : require('../Assets/Icons/home/revert.png'),
-    multiproductsIcon : require('../Assets/Icons/home/multipleproducts.png'),
-    payIcon : require('../Assets/Icons/home/pay.png'),
     optionsIcon : require('../Assets/Icons/home/options.png'),
-    applePayIcon : require('../Assets/Icons/home/applePay.png'),
     cashPayIcon : require('../Assets/Icons/home/cashPay.png'),
     gPayIcon : require('../Assets/Icons/home/gPay.png'),
-    addCardIcon : require('../Assets/Icons/home/addCard.png'),
     rightArrowIcon : require('../Assets/Icons/home/rightArrow.png'),
     checkedIcon : require('../Assets/Icons/home/checked.png'),
     uncheckedIcon : require('../Assets/Icons/home/unchecked.png'),
-    noProductIcon : require('../Assets/Icons/home/NoProduct.png'),
     copyIcon : require('../Assets/Icons/home/copy.png'),
     contactus : require('../Assets/Icons/home/contactUsIcon.png'),
     refer_friendIcon : require('../Assets/Icons/home/refer_friend.png'),
@@ -89,8 +87,6 @@ const ImagesPath = {
     backIcon: require('../Assets/Icons/default/back.png'),
     sliderdotIcon: require('../Assets/Icons/default/sliderdot.png'),
     addImageIcon: require('../Assets/Icons/default/addIcon.png'),
-    // addProductImage2Icon: require('../Assets/Icons/default/addProductImage2.png'),    
-    // addProductImageIcon: require('../Assets/Icons/default/addProductImage.jpe'),
     searchIcon: require('../Assets/Icons/default/search.png'),
 
 }

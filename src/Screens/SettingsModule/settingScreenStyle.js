@@ -16,6 +16,13 @@ const settingScreenStyle = StyleSheet.create({
          borderWidth: 5, 
         borderRadius: s(27)
     },
+    imageStyle:{
+        height: s(50), 
+        width: s(50),
+        borderWidth: 3,
+        borderColor: Colors.WHITE,
+        borderRadius: 25 
+    },
     center: {
         justifyContent: 'center',
         alignItems: 'center'

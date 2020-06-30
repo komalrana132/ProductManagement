@@ -14,13 +14,13 @@ import Register from './Screens/AuthModule/Register';
 import ForgetPasssword from './Screens/AuthModule/ForgetPassword';
 import SettingDrawer from './Screens/DrawerModule/SettingDrawer';
 
-import BecomeSellerScreen from './Screens/BecomeSellerModule/BecomeSellerScreen';
 import DashboardScreen from './Screens/HomeModule/DashboardScreen';
 import { Tabbar } from './TabView';
 import { Colors } from './CommonConfig';
 import SettingsScreen from './Screens/SettingsModule/SettingsScreen';
 import AddProduct from './Screens/HomeModule/AddProduct';
 import Splash from './Screens/Splash';
+import Notification from './Screens/SettingsModule/Notification';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator()
 const Drawer = createDrawerNavigator();
@@ -44,7 +44,7 @@ export class AppNavigation extends React.Component {
           backBehavior="initialRoute"
           screenOptions={{ headerShown: false }}
          >
-         <Stack.Screen name="Splash" component={Splash} />
+         <Stack.Screen name="Splash" component={SplashStack} />
           <Stack.Screen name="Login" component={LoginStack} />
           <Stack.Screen name="Dashboard" component={BottomTabNavigator} />
         </Stack.Navigator>
@@ -59,16 +59,22 @@ function BottomTabNavigator({ navigation, route }) {
     <Tab.Navigator
     tabBar={Tabbar}
     initialRouteName="Home"
-      backBehavior="initialRoute"
+    backBehavior="initialRouteName"
     >
-      <Stack.Screen name="DashBoardScreen" component={DashboardStack} />
+      <Stack.Screen name="Notification" component={NotificationStack} />
       <Stack.Screen name="Home" component={DashboardStack} />
       <Stack.Screen name="Profile" component={SettingsStack} />
     </Tab.Navigator>
   )
 }
 
-
+function SplashStack() {
+  return (
+    <Stack.Navigator backBehavior="Splash" screenOptions={{headerShown : false}}>
+      <Stack.Screen name="Splash"  component={Splash}/>
+    </Stack.Navigator>
+  );
+}
 
 //--------->>>>> HOME TAB STACK <<<<<------------
 function DashboardStack() {
@@ -79,7 +85,14 @@ function DashboardStack() {
     </Stack.Navigator>
   );
 }
-
+//--------->>>>> HOME TAB STACK <<<<<------------
+function NotificationStack() {
+  return (
+    <Stack.Navigator backBehavior="Dashboard">
+      <Stack.Screen name="Notification"  component={Notification}/>
+    </Stack.Navigator>
+  );
+}
 // function AddItemStack() {
 //   return (
 //     <Stack.Navigator>
