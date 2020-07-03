@@ -5,7 +5,7 @@
 # Xcode
 #
 build/
-ConstantValues.php
+Backend/ProductManagement/ConstantValues.php
 *.pbxuser
 !default.pbxuser
 *.mode1v3
